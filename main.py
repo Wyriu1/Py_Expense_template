@@ -2,6 +2,7 @@ from PyInquirer import prompt
 from examples import custom_style_2
 from expense import new_expense
 from user import add_user
+from report import get_report
 
 def ask_option():
     main_option = {
@@ -17,6 +18,10 @@ def ask_option():
 
     elif (option['main_options']) == "New User":
         add_user()
+        ask_option()
+
+    elif (option['main_options']) == "Show Status":
+        get_report()
         ask_option()
 
 def main():
